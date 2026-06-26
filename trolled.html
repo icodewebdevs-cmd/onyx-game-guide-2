@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mr. Clean Audio</title>
+   <link rel="stylesheet" href="finalstyles.css">
+   <style>
+      body {
+         min-height: 100vh;
+         margin: 0;
+         display: grid;
+         place-items: center;
+         background: #111;
+         color: #fff;
+         overflow: hidden;
+         position: relative;
+      }
+
+      .edge-text {
+         position: absolute;
+         font-size: clamp(1rem, 2.2vw, 1.6rem);
+         font-weight: 800;
+         letter-spacing: 0.24em;
+         text-transform: uppercase;
+         color: #ff4d6d;
+         text-shadow: 0 0 12px rgba(255, 77, 109, 0.45);
+         white-space: nowrap;
+         pointer-events: none;
+      }
+
+      .edge-top {
+         top: 18px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+
+      .edge-bottom {
+         bottom: 18px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+
+      .edge-left {
+         left: 10px;
+         top: 50%;
+         transform: translateY(-50%) rotate(-90deg);
+      }
+
+      .edge-right {
+         right: 10px;
+         top: 50%;
+         transform: translateY(-50%) rotate(90deg);
+      }
+
+      audio {
+         width: 100%;
+         position: absolute;
+         opacity: 0;
+         pointer-events: none;
+      }
+   </style>
+</head>
+<body>
+   <div class="edge-text edge-top">you got trolled 😱</div>
+   <div class="edge-text edge-right">you got trolled 😱</div>
+   <div class="edge-text edge-bottom">you got trolled 😱</div>
+   <div class="edge-text edge-left">you got trolled 😱</div>
+
+   <audio autoplay loop preload="auto" playsinline>
+      <source src="mr clean.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+   </audio>
+   <script>
+      const audio = document.querySelector('audio');
+
+      window.addEventListener('load', () => {
+         if (audio) {
+            audio.play().catch(() => {});
+         }
+      });
+
+      window.addEventListener('pagehide', () => {
+         if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+         }
+      });
+
+      window.addEventListener('beforeunload', () => {
+         if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+         }
+      });
+   </script>
+</body>
+</html>
+
