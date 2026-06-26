@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+   <link rel="stylesheet" href="finalstyles.css">
+   <link rel="icon" href="Gamer.png" type="image/svg+xml">
+</head>
+<body class="page-nebula">
+<canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
+
+
+<header class="site-header">
+   <div class="container header-inner">
+       <a href="index.html" class="site-logo-link">
+           <img src="Gamer.png" alt="Gamer Z" class="site-logo">
+       </a>
+       <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu"></button>
+       <nav id="site-nav" class="site-nav">
+           <a href="index.html">Home</a>
+           <a href="hobbies.html">My Hobbies</a>
+           <a href="gallery.html">Gallery</a>
+           <a href="trolled.html">The Best Audio EVER</a>
+       </nav>
+   </div>
+</header>
+<main class="container">
+   <section class="search-section">
+       <h2>Search the site</h2>
+       <div class="search-box">
+           <input id="search-input" type="search" placeholder="Search hobbies, gallery, or media..." aria-label="Search site content">
+           <button id="search-button" class="btn-search">Search</button>
+       </div>
+       <div id="search-results" class="search-results" aria-live="polite"></div>
+   </section>
+
+
+   <section class="hero">
+       <img class="hero-image" src="Screenshot 2026-06-26 at 1.28.47 PM.png" alt="Hero image">
+       <h2>Welcome to My Hobby Website</h2>
+       <p>I enjoy video games, web design, and creating content about my favorite games.</p>
+       <button id="factBtn" class="btn-fact" onclick="showFact()">
+           <span class="btn-icon">🎮</span>
+           <span class="btn-label">Gaming Fact</span>
+       </button>
+   </section>
+
+
+   <section id="about">
+       <h2>About Me</h2>
+       <p>
+           This website showcases my hobbies and interests.
+           I enjoy playing games, learning web development,
+           and sharing gaming tips with others.
+       </p>
+   </section>
+
+
+   <section id="media" class="media-section">
+       <h2>Media</h2>
+       <p>Why kids should play video games</p>
+       <div class="media-wrap">
+           <video controls poster="video-poster.svg" class="responsive-video">
+               <source src="Why Children SHOULD Play Video Games  State of the Arc Podcast - Resonant Arc (1080p, h264).mp4" type="video/mp4">
+               Your browser does not support the video tag.
+           </video>
+           <p class="media-caption">Dis is fullproof file.</p>
+       </div>
+   </section>
+</main>
+
+
+<script src="script.js"></script>
+<footer class="site-footer">
+   <p>&copy; <span id="footer-year"></span> Onyx's Final iCode Web Development and Design Project. All rights reserved.</p>
+</footer>
+
+
+<!-- Fact modal -->
+<div id="fact-modal" class="modal-overlay" aria-hidden="true">
+   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+       <header class="modal-header">
+           <h3 id="modal-title">Gaming Fact</h3>
+           <button id="modal-close" class="modal-close" aria-label="Close">x</button>
+       </header>
+       <div class="modal-body">
+           <p id="modal-fact" class="modal-fact">Loading...</p>
+           <div class="modal-actions">
+               <button id="another-fact" class="btn-small">Another</button>
+               <button id="share-fact" class="btn-small">Share</button>
+           </div>
+       </div>
+   </div>
+</div>
+</body>
+</html>
+
